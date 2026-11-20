@@ -1,0 +1,66 @@
+{
+  "slab_delay_sensitivity": [
+    {
+      "cpi": 0.978,
+      "cpm_delay_wd": 5,
+      "cpm_handover_date": "2026-09-12",
+      "eac": 38981655,
+      "slab_delay_wd": 5,
+      "spi": 0.865,
+      "steel_uplift_pct": 10,
+      "vac": -868155
+    },
+    {
+      "cpi": 0.977,
+      "cpm_delay_wd": 10,
+      "cpm_handover_date": "2026-09-18",
+      "eac": 39026515,
+      "slab_delay_wd": 10,
+      "spi": 0.825,
+      "steel_uplift_pct": 10,
+      "vac": -913015
+    },
+    {
+      "cpi": 0.976,
+      "cpm_delay_wd": 15,
+      "cpm_handover_date": "2026-09-24",
+      "eac": 39045685,
+      "slab_delay_wd": 15,
+      "spi": 0.809,
+      "steel_uplift_pct": 10,
+      "vac": -932185
+    }
+  ],
+  "steel_sensitivity": [
+    {
+      "cpi": 0.988,
+      "cpm_delay_wd": 10,
+      "cpm_handover_date": "2026-09-18",
+      "eac": 38578519,
+      "slab_delay_wd": 10,
+      "spi": 0.825,
+      "steel_uplift_pct": 5,
+      "vac": -465019
+    },
+    {
+      "cpi": 0.977,
+      "cpm_delay_wd": 10,
+      "cpm_handover_date": "2026-09-18",
+      "eac": 39026515,
+      "slab_delay_wd": 10,
+      "spi": 0.825,
+      "steel_uplift_pct": 10,
+      "vac": -913015
+    },
+    {
+      "cpi": 0.966,
+      "cpm_delay_wd": 10,
+      "cpm_handover_date": "2026-09-18",
+      "eac": 39474512,
+      "slab_delay_wd": 10,
+      "spi": 0.825,
+      "steel_uplift_pct": 15,
+      "vac": -1361012
+    }
+  ]
+}

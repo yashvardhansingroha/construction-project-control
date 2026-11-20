@@ -1,0 +1,14 @@
+item,cement_bags,steel_kg,sand_cum,aggregate_cum,bricks
+SITE,0,0,0,0,0
+EXC,0,0,0,0,0
+PCC,4.4,0,0.47,0.94,0
+RCC_M25,8.0,0,0.42,0.84,0
+STEEL,0,1000,0,0,0
+BRICK,1.25,0,0.29,0,500
+PLASTER,0.09,0,0.016,0,0
+FLOOR,0.16,0,0.025,0,0
+PAINT,0,0,0,0,0
+DW,0,0,0,0,0
+PLUMB,0,0,0,0,0
+ELEC,0,0,0,0,0
+EXT,0,0,0,0,0

@@ -1,0 +1,22 @@
+{
+  "by_file": {
+    "tests/test_app.py": 1,
+    "tests/test_budget.py": 3,
+    "tests/test_check_numbers.py": 5,
+    "tests/test_cross_check.py": 3,
+    "tests/test_data.py": 14,
+    "tests/test_evm.py": 2,
+    "tests/test_flags.py": 10,
+    "tests/test_injected_issues.py": 7,
+    "tests/test_materials.py": 3,
+    "tests/test_payments.py": 3,
+    "tests/test_quality.py": 2,
+    "tests/test_report.py": 7,
+    "tests/test_schedule.py": 5,
+    "tests/test_sensitivity.py": 4,
+    "tests/test_simulate.py": 2
+  },
+  "failed": 0,
+  "passed": 71,
+  "total": 71
+}

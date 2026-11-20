@@ -1,0 +1,39 @@
+id,name,phase,type,duration_days,predecessors,boq_items
+MOB,"Site mobilisation and survey",Substructure,work,6,,SITE:1.0
+EXC,"Excavation for footings",Substructure,work,8,MOB,EXC:1.0
+PCC,"PCC below footings",Substructure,work,4,EXC,PCC:1.0
+FTG,"Footings concrete",Substructure,work,14,PCC,RCC_M25:0.15;STEEL:0.15
+PLB,"Plinth beams and backfill",Substructure,work,8,FTG,RCC_M25:0.10;STEEL:0.10
+M_PLINTH,"Plinth complete",Substructure,milestone,0,PLB,
+COL_GF,"Ground floor columns",Superstructure,work,5,M_PLINTH,RCC_M25:0.03;STEEL:0.03
+SLAB_F1,"First floor slab",Superstructure,work,9,COL_GF,RCC_M25:0.12;STEEL:0.12
+CURE_F1,"Curing first floor slab",Superstructure,curing,6,SLAB_F1,
+COL_F1,"First floor columns",Superstructure,work,5,CURE_F1,RCC_M25:0.03;STEEL:0.03
+SLAB_F2,"Second floor slab",Superstructure,work,9,COL_F1,RCC_M25:0.12;STEEL:0.12
+CURE_F2,"Curing second floor slab",Superstructure,curing,6,SLAB_F2,
+COL_F2,"Second floor columns",Superstructure,work,5,CURE_F2,RCC_M25:0.03;STEEL:0.03
+SLAB_F3,"Third floor slab",Superstructure,work,9,COL_F2,RCC_M25:0.12;STEEL:0.12
+CURE_F3,"Curing third floor slab",Superstructure,curing,6,SLAB_F3,
+COL_F3,"Third floor columns",Superstructure,work,5,CURE_F3,RCC_M25:0.03;STEEL:0.03
+SLAB_F4,"Fourth floor slab",Superstructure,work,9,COL_F3,RCC_M25:0.12;STEEL:0.12
+CURE_F4,"Curing fourth floor slab",Superstructure,curing,6,SLAB_F4,
+COL_F4,"Fourth floor columns",Superstructure,work,5,CURE_F4,RCC_M25:0.03;STEEL:0.03
+SLAB_ROOF,"Roof slab",Superstructure,work,9,COL_F4,RCC_M25:0.12;STEEL:0.12
+M_ROOF,"Roof slab cast",Superstructure,milestone,0,SLAB_ROOF,
+CURE_ROOF,"Curing roof slab",Superstructure,curing,6,M_ROOF,
+M_STRUCTURE,"Structure complete",Superstructure,milestone,0,CURE_ROOF,
+BW_GF,"Brickwork ground floor",Brickwork,work,8,CURE_F1,BRICK:0.20
+BW_F1,"Brickwork first floor",Brickwork,work,8,CURE_F2,BRICK:0.20
+BW_F2,"Brickwork second floor",Brickwork,work,8,CURE_F3,BRICK:0.20
+BW_F3,"Brickwork third floor",Brickwork,work,8,CURE_F4,BRICK:0.20
+BW_F4,"Brickwork fourth floor",Brickwork,work,8,CURE_ROOF,BRICK:0.20
+PLUMB_RI,"Plumbing rough-in",Finishes,work,12,BW_F4;M_STRUCTURE,PLUMB:0.85
+ELEC_RI,"Electrical rough-in",Finishes,work,10,BW_F4;M_STRUCTURE,ELEC:0.85
+PLASTER,"Plastering internal and external",Finishes,work,18,PLUMB_RI;ELEC_RI,PLASTER:1.0
+FLOOR,"Vitrified tile flooring",Finishes,work,14,PLASTER,FLOOR:1.0
+DW,"Doors and windows fixing",Finishes,work,10,PLASTER,DW:1.0
+PAINT,"Internal and external painting",Finishes,work,12,FLOOR;DW,PAINT:1.0
+EXT,"External works and compound wall",Finishes,work,20,M_STRUCTURE,EXT:1.0
+M_FINISH,"Finishing complete",Finishes,milestone,0,PAINT;EXT,
+TEST,"Testing and commissioning",Handover,work,7,M_FINISH,PLUMB:0.15;ELEC:0.15
+M_HANDOVER,"Project handover",Handover,milestone,0,TEST,

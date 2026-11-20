@@ -1,0 +1,98 @@
+project:
+  name: "G+4 Residential Building (Synthetic)"
+  synthetic: true
+  built_up_area_sqm: 2000
+  floors: 5
+  footprint_sqm: 400
+  foundation: "isolated footings"
+
+calendar:
+  start_date: "2026-01-05"
+  working_days: "Mon-Sat"
+  rest_days:
+    - "Sunday"
+  holidays: []
+  data_date: "2026-06-30"
+  report_month: 6
+
+seed: 42
+
+assumptions_note: "All rates, quantities and coefficients are round illustrative assumptions, not from CPWD DSR or any official schedule of rates."
+
+payments:
+  retention_pct: 5
+  tds_pct: 2
+  bill_cycle: "monthly, submitted on the last calendar day of the month"
+  certification_days: 7
+  payment_days_after_certification: 14
+
+thresholds:
+  milestone_slip_days: 5
+  spi_amber: 0.95
+  spi_red: 0.90
+  cpi_amber: 0.95
+  cpi_red: 0.90
+  activity_cost_variance_pct: 5
+  ncr_open_days: 14
+  bill_pending_days: 30
+
+noise:
+  progress_sd: 0.03
+  cost_sd: 0.02
+  cost_noise_clip_pct: 3
+
+injections:
+  injections_enabled: true
+  slab_delay:
+    enabled: true
+    activity: "SLAB_F2"
+    extra_working_days: 10
+    cause: "shuttering material shortage"
+    why: "Critical-path delay caused by shuttering material shortage on 2nd-floor slab"
+  steel_escalation:
+    enabled: true
+    boq_item: "STEEL"
+    rate_uplift_pct: 10
+    from_month: 3
+    cause: "steel price escalation"
+    why: "Cost overrun due to market-wide steel price escalation from month 3 onwards"
+  cement_shortage:
+    enabled: true
+    month: 4
+    procured_fraction_of_requirement: 0.70
+    cause: "cement supply shortage"
+    why: "Cement procured drops to 70% of requirement in month 4"
+  qc_failures:
+    - id: "a"
+      activity: "SLAB_F1"
+      test: "cube_test"
+      result: "fail"
+      ncr_closed_days: 9
+      detail: "7-day cube strength below the acceptance value for the batch"
+      why: "SLAB_F1 cube test failure resulting in NCR closed after 9 days"
+    - id: "b"
+      activity: "COL_F2"
+      test: "reinforcement_check"
+      result: "fail"
+      ncr_closed_days: 20
+      detail: "Rebar spacing and cover blocks not as per drawing"
+      why: "COL_F2 reinforcement check failure resulting in NCR closed after 20 days"
+    - id: "c"
+      activity: "SLAB_F3"
+      test: "slab_level_check"
+      result: "fail"
+      ncr_status: "open"
+      detail: "Slab top level outside the specified tolerance"
+      why: "SLAB_F3 slab level check failure resulting in NCR still open at data date"
+  payment_issues:
+    ra_05_held:
+      enabled: true
+      bill: "RA-05"
+      status: "held"
+      cause: "open NCR on SLAB_F3"
+      why: "RA-05 held because of the open NCR on SLAB_F3"
+    ra_03_late:
+      enabled: true
+      bill: "RA-03"
+      payment_days_after_submission: 45
+      why: "RA-03 paid late, 45 days after submission"

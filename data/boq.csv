@@ -1,0 +1,14 @@
+item,description,unit,quantity,rate_inr
+SITE,"Site mobilisation, survey and setting out",LS,1,600000
+EXC,"Excavation for isolated footings",cum,650,350
+PCC,"PCC M10 below footings",cum,45,6500
+RCC_M25,"RCC M25 concrete incl. shuttering, excl. steel",cum,820,9500
+STEEL,"Reinforcement steel Fe500, cut, bent and placed",MT,90,72000
+BRICK,"Brickwork 230 mm in CM 1:6",cum,520,7200
+PLASTER,"12 mm cement plaster CM 1:4, internal + external",sqm,7600,380
+FLOOR,"Vitrified tile flooring incl. bedding",sqm,1750,1250
+PAINT,"Painting, internal and external",sqm,7600,190
+DW,"Doors and windows, supply and fix",nos,190,14000
+PLUMB,"Plumbing and sanitary, complete",LS,1,3800000
+ELEC,"Electrical, complete",LS,1,4200000
+EXT,"External works: paving, drainage, compound wall",LS,1,1800000
